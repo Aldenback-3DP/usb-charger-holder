@@ -63,3 +63,8 @@ openscad -o holder_big.stl -D in_w=40 -D in_l=60 -D groove=false src/usb_charger
 ## Print tips
 
 No print settings are recorded for this design. The part has flat faces on both the plate top and the box bottom, so either can go on the bed; check overhangs (cable slot, countersinks) in your slicer.
+
+## Open questions
+
+- Is v6 the final version of the design? This repo publishes v6 as is.
+- Should the screw countersinks be on the box side (as in v6) or on the other side of the plate?
