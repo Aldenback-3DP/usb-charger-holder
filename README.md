@@ -12,12 +12,37 @@ A parametric **flush-mount USB charger holder** for OpenSCAD: a flat mounting pl
 |---|---|---|
 | ![Top view](images/usb_charger_holder.png) | ![Bottom view](images/usb_charger_holder_bottom.png) | ![Plan view](images/usb_charger_holder_top.png) |
 
+## Variants
+
+Select a variant with the `charger` parameter at the top of the scad (or in the Customizer):
+
+| `charger` | Charger | Pocket (W × L × depth) | Plate | Total height | Status |
+|---|---|---|---|---|---|
+| `"anker_zolo_70w"` (default) | [Anker Zolo 4-port 70W](https://www.anker.com/se/products/anker-zolo-charger-70w-4-port-pd-3-0), model A121C | 32 × 50 × 27 mm (v6 as printed) | 70 × 88 × 4 | 31 mm | ✅ Test-printed, fits |
+| `"apple_a1357"` | Apple USB power adapter A1357 (EU, USB-A) | 47 × 47 × 29 mm | 88 × 88 × 4 | 33 mm | Measured, **not test-printed** |
+
+```sh
+openscad -o anker.stl src/usb_charger_holder.scad
+openscad -o apple.stl -D 'charger="apple_a1357"' src/usb_charger_holder.scad
+```
+
+**Apple A1357.** The body measures 46 × 46 × 28.5 mm with calipers (prongs not included). The prongs come out of one 46 × 46 face and the USB-A port is on the opposite face. The variant uses the same orientation as the Anker pocket: prong face down on the box floor, prongs through the 22 mm floor slot (EU prongs are 19 mm apart), and USB face up, flush with the plate top. Details:
+- The pocket is the body plus 0.5 mm clearance per side (47 × 47), and the depth is 28.5 + 0.5 = 29 mm.
+- The A1357 prongs are centred on their face, so the slot is centred (`slot_y = 0`). On the Anker it sits at −9.
+- The V-grooves are off, because the A1357 is a plain cube.
+- The plate is 88 × 88 so the corner screw countersinks clear the wider 55 mm box.
+
+![Apple A1357 variant](images/usb_charger_holder_apple_a1357.png)
+
+Apple's 40W cube charger (A3365) is about 46 × 46 × 28 mm according to published specs. It hasn't been measured, but it will probably fit the `apple_a1357` pocket too.
+
 ## STL files
 
 | File | Notes |
 |---|---|
 | [stl/usb_charger_holder.stl](stl/usb_charger_holder.stl) | Default parameters: plate 70 × 88 × 4 mm, pocket 32 × 50 mm, 31 mm total height |
-| [stl/usb_charger_holder_anker_zolo_70w.stl](stl/usb_charger_holder_anker_zolo_70w.stl) | v6 defaults, test-printed and approved for the [Anker Zolo 4-port 70W](https://www.anker.com/se/products/anker-zolo-charger-70w-4-port-pd-3-0) |
+| [stl/usb_charger_holder_anker_zolo_70w.stl](stl/usb_charger_holder_anker_zolo_70w.stl) | v6 defaults (`charger="anker_zolo_70w"`), test-printed and approved for the [Anker Zolo 4-port 70W](https://www.anker.com/se/products/anker-zolo-charger-70w-4-port-pd-3-0) |
+| [stl/usb_charger_holder_apple_a1357.stl](stl/usb_charger_holder_apple_a1357.stl) | `charger="apple_a1357"`: Apple A1357, pocket 47 × 47 × 29 mm, plate 88 × 88. Not test-printed |
 
 ## Parameters
 
