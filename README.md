@@ -2,7 +2,7 @@
 
 A parametric **flush-mount USB charger holder** for OpenSCAD: a flat mounting plate with a recessed box (pocket) underneath that holds a USB charger. A cable slot runs through the floor and both long walls, two V-grooves in the long inner walls help retain the charger, and four countersunk screw holes fix the plate in place.
 
-> ✅ **Test print approved.** v6 has been test-printed and fits well. It was made for the charger [Anker Zolo 4-port 70W](https://www.anker.com/se/products/anker-zolo-charger-70w-4-port-pd-3-0) (Anker Zolo 70W, 4 ports).
+> ✅ **Test print approved.** v6 has been test-printed and fits well. It was made for the charger [Anker Zolo 4-port 70W](https://www.anker.com/se/products/anker-zolo-charger-70w-4-port-pd-3-0) (Anker Zolo 70W, 4 ports, model A121C).
 
 ![Test print with the Anker Zolo 70W charger](docs/test-print-anker-zolo-70w.jpg)
 
@@ -66,7 +66,3 @@ openscad -o holder_big.stl -D in_w=40 -D in_l=60 -D groove=false src/usb_charger
 ## Print tips
 
 No print settings are recorded for this design. The part has flat faces on both the plate top and the box bottom, so either can go on the bed; check overhangs (cable slot, countersinks) in your slicer.
-
-## Open questions
-
-- Should the screw countersinks be on the box side (as in v6) or on the other side of the plate?
